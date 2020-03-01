@@ -1,0 +1,195 @@
+body {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    color: #dadada;
+    background: radial-gradient(circle 180em at center, #1d683d, #000000);
+}
+
+.logo {
+    margin: 10px auto;
+    letter-spacing: 5px;
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 5px 7px 15px #101010;
+}
+
+hr {
+    width: 80%;
+    margin: 20px auto 30px auto;
+    border: 2px solid #252525;
+}
+
+footer {
+    background-color: #252525;
+    color: #1d683d;
+    letter-spacing: 1px;
+    text-align: center;
+    position: static;
+    bottom: 0;
+    padding: 10px 20px;
+}
+
+.game-options-menu {
+    font-size: 20px;
+}
+
+.game-options-menu button {
+    margin: 20px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    background-color: #dadadaec;
+    color: #1d683d;
+    border-color: transparent;
+    width: 100px;
+    font-size: 20px;
+    outline: none;
+}
+
+.game-options-menu button:hover {
+    cursor: pointer;
+    position: relative;
+    top: 3px;
+}
+
+.game-options-menu button:active {
+    background-color: #797979;
+}
+
+#play-button {
+    visibility: hidden;
+}
+
+.game-options-menu label {
+    margin: auto 15px;
+}
+
+#game-mode, #board-size, #player-name, #filter-bar {
+    width: 210px;
+    padding: 2px;
+    color: #dadada;
+    font-size: 20px;
+    outline: none;
+    border: 1px solid rgb(218, 218, 218);
+    border-radius: 10px;
+    -webkit-appearance: none;
+    background: transparent url("data:image/svg+xml;utf8,<svg fill='rgb(218, 218, 218)' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>") no-repeat;
+    background-position-x: 100%;
+}
+
+#player-name::placeholder, #filter-bar::placeholder {
+    color: #dadada;
+}
+
+#player-name, #filter-bar {
+    background: transparent;
+    margin-bottom: 15px;
+    width: 310px;
+}
+
+#board-size {
+    width: 50px;
+}
+
+.game-options-menu option {
+    color: #1d683d;
+    background-color: #dadada;
+}
+
+#game-stats-popup {
+    display: block;
+    font-size: 17px;
+    margin: 0;
+    padding: 10px;
+    min-height: 134px;
+}
+
+#game-field-wrapper {
+    min-height: 250px;
+}
+
+.game-field {
+    padding: 10px;
+    min-height: 150px;
+    display: inline-block;
+}
+
+.details {
+    padding: 15px;
+    display: none;
+}
+
+.details p {
+    display: inline;
+    padding: 5px;
+}
+
+#board {
+    display: none;
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#board tr {
+    perspective: 2000px;
+}
+
+#board td {
+    margin: 0;
+    padding: 5px;
+    position: relative;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+#board img {
+    width: 80px;
+}
+
+.card-face {
+    backface-visibility: hidden;
+}
+
+.card-back {
+    position: absolute;
+    transform: rotateY(180deg);
+}
+
+.card.showing {
+    transform: rotateY(180deg);
+}
+
+.wrapper {
+    margin: 50px;
+}
+
+.statistics {
+    overflow-y: auto;
+    display: inline-block;
+    padding: 2px 0 2px 2px;
+    height: 335px;
+    width: 465px;
+    border: 2px solid #252525;
+}
+
+#stats {
+    font-weight: normal;
+    margin: 0 auto;
+    width: 450px;
+}
+
+#stats .headers th {
+    padding: 5px;
+}
+
+#stats td, tr {
+    padding: 5px;
+}
+
+#stats .sortable:hover {
+    background-color: #dadada;
+    color: #1d683d;
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="prax3.css">
+    <link rel="icon" href="favicon.ico">
+    <script type="text/javascript" src="prax3.js"></script>
+    <title>Memory Game</title>
+</head>
+
+<body onload="generateGameField(); loadGameData()">
+    <h1 class="logo">MEMORY GAME</h1>
+    <hr>
+    <div class="game-options-menu">
+        <form name="presets" method="POST">
+            <input oninput="validatePlayerName()" id="player-name" type="text" placeholder="Enter your name" name="player-name">
+            <br>
+            <label for="game-mode">The pair of cards has:</label>
+            <select name="game-mode" id="game-mode" onchange="changeBoardSize()">
+                <option value="same-value">Same value</option>
+                <option value="same-suit-and-value">Same suit and value</option>
+            </select>
+            <label for="board-size">Number of cards to play with:</label>
+            <select name="board-size" id="board-size">
+                <option value="6">6</option>
+                <option value="16">16</option>
+                <option value="26">26</option>
+            </select>
+            <br>
+            <button type="button" onclick="startGame()" id="play-button">Play</button>
+            <button type="button" onclick="clearGameField()" id="clear-button">Clear</button>
+        </form>
+    </div>
+    <div id="game-field-wrapper">
+        <div class="details">
+            <p>Time Passed: <span id="timer">0</span></p>
+            <p>Current Score: <span id="score">0</span></p>
+        </div>
+        <div class="game-field">
+            <div id="game-stats-popup">
+                <p>You did it!</p>
+                <p>Your Final Score: <span id="game-stats-score">0</span></p>
+                <p>Time Taken: <span id="game-stats-time">0</span></p>
+            </div>
+            <table id="board"></table>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div>
+            <h3>Scores History</h3>
+            <input type="text" placeholder="Filter By Player Name" id="filter-bar" oninput="filterByPlayer()">
+        </div>
+        <div class="statistics">
+            <table id="stats">
+                <thead>
+                    <tr class="headers">
+                        <th>№</th>
+                        <th>Player Name</th>
+                        <th>Mode | Cards</th>
+                        <th class="sortable" onclick="sortTable('score')" style="cursor: pointer;">Score</th>
+                        <th class="sortable" onclick="sortTable('time')" style="cursor: pointer">Time taken</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <footer>
+        <p>This memory game was created by Alexander Frolov, 186076IAIB</p>
+    </footer>
+</body>
+
+</html>

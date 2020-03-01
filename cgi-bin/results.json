@@ -1,0 +1,18 @@
+{
+    "scores": [
+        {
+            "name": "dd",
+            "mode": "same-value",
+            "cards": 6,
+            "time": 9,
+            "score": 10
+        },
+        {
+            "name": "ff",
+            "mode": "same-value",
+            "cards": 6,
+            "time": 10,
+            "score": 13
+        }
+    ]
+}
